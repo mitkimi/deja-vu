@@ -32,14 +32,15 @@ const MenuComponent = {
       return buffer[0] || 'index'
     },
     handleMenuClick (key) {
-      console.log(SubMenu[key])
       let flag = 0
-      for (let i = 0; i < SubMenu[key].length; i += 1) {
-        if (SubMenu[key][i].isDefault) {
-          flag = i
-          break
+      SubMenu[key] && (function () {
+        for (let i = 0; i < SubMenu[key].length; i += 1) {
+          if (SubMenu[key][i].isDefault) {
+            flag = i
+            break
+          }
         }
-      }
+      })()
       const param = SubMenu[key] ? SubMenu[key][flag].key : null
       this.$router.push({
         path: `/${key}${param ? '/' + param : ''}`

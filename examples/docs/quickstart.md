@@ -63,6 +63,8 @@ new Vue({
 })
 ```
 
+## 开始使用
+
 ## 在 `nuxt.js` 中使用
 
 首先，在 `plugins/` 目录中建立一个 `deja-vu.js` 文件，内容如下：
@@ -73,7 +75,7 @@ import DejaVu from '@mitkimi/deja-vu'
 Vue.use(DejaVu)
 ```
 
-然后修改 `nuxt.config.js` 的内容，在 `plugins` 属性中引入
+然后修改 `nuxt.config.js` 的内容，在 `plugins` 属性中引入，并设置为在服务端运行
 ```javascript
 // ... some codes ...
   /*
@@ -81,9 +83,7 @@ Vue.use(DejaVu)
   */
   plugins: [{
     src:'~plugins/deja-vu',
-    ssr: true //是 能在服务端运行
+    ssr: true // 是能在服务端运行
   }
 // ... some codes ...
 ```
-
-## 开始使用
