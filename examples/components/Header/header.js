@@ -1,6 +1,6 @@
 import Menu from '../Menu'
 const HeaderComponent = {
-  name: 'Header Component',
+  name: 'HeaderComponent',
   components: {
     'dv-web-menu': Menu
   }

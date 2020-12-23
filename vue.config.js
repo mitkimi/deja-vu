@@ -35,5 +35,15 @@ module.exports = {
           // 修改它的选项...
           return options
       })
+    // 用于解析 md 文件
+    config.module
+      .rule('md')
+      .test(/\.md$/)
+      .use('html-loader')
+      .loader('html-loader')
+      .end()
+      .use('markdown-loader')
+      .loader('markdown-loader')
+      .end()
   }
 }

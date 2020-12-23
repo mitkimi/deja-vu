@@ -1,10 +1,10 @@
 import Header from '@/components/Header'
 
-const HomeScene = {
-  name: 'Home page',
+const DocumnetScene = {
+  name: 'Documnet page',
   components: {
     'dv-header': Header
   }
 }
 
-export default HomeScene
+export default DocumnetScene

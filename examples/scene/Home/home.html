@@ -1,3 +1,36 @@
-<div class="dv-web-header">
+<div class="home-page">
   <dv-header></dv-header>
+  <div class="section first-screen">
+    <vue-particles
+      class="particles"
+      :particleOpacity="0.7"
+      :particlesNumber="80"
+      shapeType="circle"
+      :particleSize="4"
+      linesColor="#dedede"
+      :linesWidth="1"
+      :lineLinked="true"
+      :lineOpacity="0.4"
+      :linesDistance="150"
+      :moveSpeed="1"
+      :hoverEffect="true"
+      hoverMode="grab"
+      :clickEffect="true"
+      clickMode="push"
+    >
+    </vue-particles>
+    <div class="main-screen">
+      <h1>Deja vu</h1>
+      <div class="tips">意思是“似曾相识”</div>
+      <div class="sub-title">一套基于 Vue.js 的轻量级 UI 组件库</div>
+      <div class="all-button-container">
+        <div class="btn">开始使用</div>
+        <div class="btn">开发者</div>
+        <div class="btn">GitHub</div>
+      </div>
+    </div>
+  </div>
+  <div class="index-page-footer">
+    &copy; Copyright, deja-vu.illiaccess.com, All Rights Reseved.
+  </div>
 </div>

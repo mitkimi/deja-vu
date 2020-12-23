@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../scene/Home'
+import Document from '../scene/Document'
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,16 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/guide/:routeId',
+    name: 'Guide',
+    component: Document
+  },
+  {
+    path: '/components/:routeId',
+    name: 'Components',
+    component: Document
   },
   {
     path: '/about',
