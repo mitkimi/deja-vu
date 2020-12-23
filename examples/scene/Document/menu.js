@@ -50,9 +50,9 @@ const components = [
     style: {}
   },
   {
-    key: 'container',
+    key: 'grid',
     isMarkdownPage: true,
-    name: 'Container 容器',
+    name: 'Grid 栅格',
     style: {}
   },
   {
