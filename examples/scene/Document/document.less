@@ -2,35 +2,46 @@
 .document-page {
   .header {
     border-bottom: 1px solid #999999;
+    background: #f8f8f9;
   }
   .page {
     padding-top: 100px;
+    padding-bottom: 40px;
     .page-core {
       display: flex;
       flex-direction: row;
+      background: #ffffff;
       .list-menu {
         width: 240px;
+        overflow-y: scroll;
+        padding-bottom: 20px;
         .list-item-container {
-          height: 50px;
-          background: #f8f8f9;
-          .list-item {
-            line-height: 50px;
-            padding-left: 20px;
-            transition: all, 300ms;
-            cursor: pointer;
-            &:hover {
-              background: #f3f3f3;
+          height: 40px;
+          .link {
+            .list-item {
+              font-size: 14px;
+              transition: all, 300ms;
+              cursor: pointer;
+              color: #666666;
+              line-height: 40px;
+              &:hover {
+                color: #333333;
+              }
+            }
+            .list-item-active {
+              color: #333333;
+              font-weight: bold;
             }
           }
-          .list-item-active {
-            border-right: 3px solid #333333;
-            background: #efeff3;
+          .not-a-link {
+            margin-top: 10px;
           }
         }
       }
       .main {
         width: calc(100% - 280px);
         margin-left: 40px;
+        padding-bottom: 20px;
       }
     }
   }

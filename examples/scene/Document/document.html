@@ -4,8 +4,13 @@
     <div class="page-core">
       <div class="list-menu">
         <div class="list-item-container" v-for="item,index in menu" :key="index">
-          <div class="list-item list-item-active" v-if="activeMenu === item.key">{{item.name}}</div>
-          <div class="list-item" v-else @click="handleRoute(item.key)">{{item.name}}</div>
+          <div class="link" v-if="item.isMarkdownPage === true" :style="item.style">
+            <div class="list-item list-item-active" v-if="activeMenu === item.key">{{item.name}}</div>
+            <div class="list-item" v-else @click="handleRoute(item.key)">{{item.name}}</div>
+          </div>
+          <div class="not-a-link" v-else :style="item.style">
+            {{item.name}}
+          </div>
         </div>
       </div>
       <div class="main">
