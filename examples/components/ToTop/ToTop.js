@@ -28,7 +28,7 @@ const ToTop = {
       const timer = setInterval(() => {
         window.scrollTo(0, next)
         next -= scrollTop / period
-        if (next <= 0) {
+        if (next <= -100) {
           clearInterval(timer)
         }
       }, period)
