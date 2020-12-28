@@ -9,6 +9,9 @@ module.exports = {
       filename: 'index.html'
     }
   },
+  devServer: {
+    port: 9000
+  },
   chainWebpack: config => {
     // vue默认@指向src目录，这里要修正为examples，另外新增一个~指向packages
     config.resolve.alias
