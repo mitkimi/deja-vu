@@ -78,6 +78,18 @@ const components = [
     isMarkdownPage: true,
     name: 'Button 按钮',
     style: {}
+  },
+  {
+    name: 'media',
+    style: {
+      ...LevelTwoStyle
+    }
+  },
+  {
+    key: 'video',
+    isMarkdownPage: true,
+    name: 'Video 视频',
+    style: {}
   }
 ]
 

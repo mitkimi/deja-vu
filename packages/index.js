@@ -1,17 +1,24 @@
-import test from './test'
-const components = [test]
-const install = function(Vue) {
-    if (install.installed) return;
-    components.map(component => {
-        Vue.use(component)
-    });
-};
+// 测试
+import test from './Test'
+
+// 真的组件
+import video from './Video'
+const components = [
+  test,
+  video
+]
+const install = function (Vue) {
+  if (install.installed) return
+  components.map(component => {
+    Vue.use(component)
+  })
+}
 //  全局引用可自动安装
 if (typeof window !== 'undefined' && window.Vue) {
-    install(window.Vue);
+  install(window.Vue)
 }
 export default {
-    install,
-    test
-};
-export { test }
+  install,
+  test,
+  video
+}

@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name deja-vu --dest lib packages/index.js",
+    "lib": "vue-cli-service build --target lib --name @mitkimi/deja-vu --dest lib packages/index.js",
     "publish:web": "npm run build && scp -r ./dist/* root@47.104.80.66:/home/www/uiweb@deja-vu.illiaccess.com/dist"
   },
   "main": "lib/deja-vu.common.js",

@@ -1,0 +1,28 @@
+<div class="dv-video">
+  <video ref="video"
+    class="dv-video__video"
+    @timeupdate="updatePlayerStatus"
+    @click="handlePlayStatusToggle">
+    <source src="http://bjcloudhongqi.wengegroup.com:9080/ilg-streamer/20201223/5fe2e50f1b96afd74b461e99/03cb3dc4-0ab3-4ca6-b5bc-f999cff38104.mp4" />
+  </video>
+  <div class="dv-video__controls">
+    <div class="dv-video__controls__process">
+      <div class="dv-video__controls__process__bar">
+        <div class="dv-video__controls__process__bar--played" :style="processStyle"></div>
+      </div>
+    </div>
+    <div class="dv-video__controls__buttons">
+      <div class="left">
+        <div class="dv-video__controls__buttons__button" v-if="!isPlaying" @click="handlePlayStatusToggle">p</div>
+        <div class="dv-video__controls__buttons__button" v-else @click="handlePlayStatusToggle">||</div>
+        <div class="dv-video__controls__buttons__button">so</div>
+      </div>
+      <div class="right">
+        <div class="dv-video__controls__status">
+          {{current | timePeriod}} / {{duration | timePeriod}}
+        </div>
+        <div class="dv-video__controls__buttons__button" @click="handlePlayerFullscreen">fu</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,9 +1,10 @@
 <template>
-  <div>test</div>
+  <div>用来测试的TEST</div>
 </template>
 
 <script>
 export default {
-  name: "Test"
+  name: 'Test'
 }
+
 </script>

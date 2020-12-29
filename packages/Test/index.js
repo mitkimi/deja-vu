@@ -1,8 +1,8 @@
-import Test from './component';
+import Test from './component'
 
 /* istanbul ignore next */
-Test.install = function(Vue) {
-  Vue.component(Test.name, Test);
-};
+Test.install = function (Vue) {
+  Vue.component(Test.name, Test)
+}
 
-export default Test;
+export default Test
