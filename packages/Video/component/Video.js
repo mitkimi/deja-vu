@@ -15,6 +15,14 @@ export default {
     continuousPlay: {
       type: [Boolean, String],
       default: true
+    },
+    width: {
+      type: String,
+      default: '600px'
+    },
+    height: {
+      type: String,
+      default: '377px'
     }
   },
   data () {
@@ -92,7 +100,7 @@ export default {
           } else {
             const obj = {
               poster: v.poster || VideoIcon,
-              duration: v.duration || NaN,
+              duration: v.duration || null,
               name: v.name || `视频 ${i + 1}`,
               url: v.url
             }
@@ -102,7 +110,13 @@ export default {
         this.playList = playList
         flag = 1
       } else if (typeof src === 'string') {
-        playList.push(src)
+        const obj = {
+          poster: VideoIcon,
+          duration: null,
+          name: '视频',
+          url: src
+        }
+        playList.push(obj)
         this.playList = playList
         flag = 1
       } else {

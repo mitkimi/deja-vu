@@ -1,4 +1,4 @@
-<div class="dv-video" :style="{ width: this.width || '600px', height: this.height || '377px'}">
+<div class="dv-video" :style="{ width, height }">
   <video ref="video"
     class="dv-video__video"
     @timeupdate="updatePlayerStatus"

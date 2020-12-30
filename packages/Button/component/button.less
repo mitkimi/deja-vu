@@ -1,0 +1,63 @@
+@buttonHeight: 40px;
+@fontSize: 14px;
+.dv-button {
+  font-size: @fontSize;
+  padding: 0 @buttonHeight / 2;
+  height: @buttonHeight;
+  background: #f8f8f9;
+  border: 1px solid #efeff3;
+  color: #efeff3;
+  cursor: pointer;
+  color: #333333;
+  border-radius: 4px;
+  outline: none;
+  transition: all, 300ms;
+  &:hover {
+    border: 1px solid #cccccc;
+    color: #333333;
+    background: #eeeeee;
+  }
+}
+
+// 基础按钮样式
+.dv-button-primary {
+  border: 1px solid #409eff;
+  color: #ffffff;
+  background: #409eff;
+}
+.dv-button-success {
+  border: 1px solid #67C23A;
+  color: #ffffff;
+  background: #67C23A;
+}
+.dv-button-info {
+  border: 1px solid #909399;
+  color: #ffffff;
+  background: #909399;
+}
+.dv-button-warning {
+  border: 1px solid #E6A23C;
+  color: #ffffff;
+  background: #E6A23C;
+}
+.dv-button-danger {
+  border: 1px solid #F56C6C;
+  color: #ffffff;
+  background: #F56C6C;
+}
+
+// 朴素按钮污染
+.dv-button-plain {
+  opacity: .6;
+}
+
+// 圆角按钮污染
+.dv-button-round {
+  border-radius: @buttonHeight / 2;
+}
+
+// 圆形按钮污染
+.dv-button-circle {
+  width: @buttonHeight;
+  border-radius: 50%;
+}
