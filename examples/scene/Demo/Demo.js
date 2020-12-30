@@ -20,6 +20,10 @@ const DemoScene = {
           duration: 19,
           url: 'https://cdn.heelysfly.com/heelysflycom/pcweb/19s.mp4'
         }
+      ],
+      playList2: [
+        'https://cdn.heelysfly.com/heelysflycom/pcweb/19s.mp4',
+        'https://cdn.heelysfly.com/heelysflycom/pcweb/8s.mp4'
       ]
     }
   }

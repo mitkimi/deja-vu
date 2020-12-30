@@ -1,10 +1,11 @@
 // 测试
-import test from './Test'
+// import test from './Test'
 
 // 真的组件
+import button from './Button'
 import video from './Video'
 const components = [
-  test,
+  button,
   video
 ]
 const install = function (Vue) {
@@ -19,6 +20,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 export default {
   install,
-  test,
+  button,
   video
 }

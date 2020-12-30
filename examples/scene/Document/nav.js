@@ -64,17 +64,23 @@ const components = [
     style: {}
   },
   {
+    key: 'typography',
+    isMarkdownPage: true,
+    name: 'Typography 字体',
+    style: {}
+  },
+  {
     key: 'border',
     isMarkdownPage: true,
     name: 'Border 边框',
     style: {}
   },
-  // {
-  //   key: 'icon',
-  //   isMarkdownPage: true,
-  //   name: 'Icon 图标',
-  //   style: {}
-  // },
+  {
+    key: 'icon',
+    isMarkdownPage: true,
+    name: 'Icon 图标',
+    style: {}
+  },
   {
     key: 'button',
     isMarkdownPage: true,
@@ -105,6 +111,11 @@ const guide = [
     key: 'navigation',
     isMarkdownPage: true,
     name: '导航'
+  },
+  {
+    key: 'specification',
+    isMarkdownPage: true,
+    name: '代码规范'
   }
 ]
 

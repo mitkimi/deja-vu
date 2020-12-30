@@ -1,0 +1,14 @@
+<div class="demo-block">
+  <div class="demo">
+    <slot name="source"></slot>
+  </div>
+  <collapse>
+    <div class="code" v-if="scoped">
+      <slot name="highlight"></slot>
+    </div>
+  </collapse>
+  <div :class="`toggle ${scoped ? 'active' : ''}`" @click="() => { handleCodeToggle() }">
+    <span v-if="scoped">隐藏代码</span>
+    <span v-else>显示代码</span>
+  </div>
+</div>

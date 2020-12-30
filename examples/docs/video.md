@@ -7,7 +7,7 @@ Deja vu 对此进行了一些封装
 
 :::demo
 ```html
-<Video src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"></Video>
+<Video src="https://cdn.heelysfly.com/heelysflycom/pcweb/19s.mp4"></Video>
 ```
 :::
 
@@ -24,15 +24,20 @@ Deja vu 对此进行了一些封装
 在使用视频地址时，组件会区分起格式并进行渲染
 
 当只有一条视频时，可以直接传入字符串类型的视频地址
+
+:::demo
 ```html
-<Video src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"></Video>
+<Video src="https://cdn.heelysfly.com/heelysflycom/pcweb/19s.mp4"></Video>
 ```
+:::
 
 当有多条视频时，可以传入一个数组，数组的每个元素是视频地址
 只要在有多条视频时，在播放按钮的旁边就会出现 `上一个` 和 `下一个` 的切换按钮
 同时，在全凭按钮的最右边会出现展开视频列表的按钮，视频列表将自动生成
 单机视频列表中的视频，将会切换到对应的视频，并且开始播放
-```vue
+
+:::demo
+```html
 <template>
   <Video :src="videoList"></Video>
 </template>
@@ -41,18 +46,21 @@ export default {
   data () {
     return {
       videoList: [
-        'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-        'http://media.w3.org/2010/05/bunny/movie.mp4'
+        'https://cdn.heelysfly.com/heelysflycom/pcweb/8s.mp4',
+        'https://cdn.heelysfly.com/heelysflycom/pcweb/19s.mp4'
       ]
     }
   }
 }
 </script>
 ```
+:::
 
 当你想要指定视频的`名称`、`海报`、`时长`等，可以想 `src` 传入一个全是对象的数组
 右侧的视频列表将根据你传入的内容进行渲染
-```vue
+
+:::demo
+```html
 <template>
   <Video :src="videoList"></Video>
 </template>
@@ -79,6 +87,7 @@ export default {
 }
 </script>
 ```
+:::
 
 ## 未完成的功能
 - 可拖动的进度条
