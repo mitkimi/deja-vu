@@ -4,9 +4,13 @@
 // 真的组件
 import button from './Button'
 import video from './Video'
+import videoJumbo from './VideoJumbo'
+import particles from './Particles'
 const components = [
   button,
-  video
+  video,
+  videoJumbo,
+  particles
 ]
 const install = function (Vue) {
   if (install.installed) return
@@ -21,5 +25,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   button,
-  video
+  video,
+  videoJumbo,
+  particles
 }

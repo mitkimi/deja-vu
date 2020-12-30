@@ -98,6 +98,24 @@ const components = [
     isMarkdownPage: true,
     name: 'Video 视频',
     style: {}
+  },
+  {
+    name: 'special effects',
+    style: {
+      ...LevelTwoStyle
+    }
+  },
+  {
+    key: 'videojumbo',
+    isMarkdownPage: true,
+    name: 'VideoJumbo 视频背景',
+    style: {}
+  },
+  {
+    key: 'particles',
+    isMarkdownPage: true,
+    name: 'Particles 粒子特效',
+    style: {}
   }
 ]
 

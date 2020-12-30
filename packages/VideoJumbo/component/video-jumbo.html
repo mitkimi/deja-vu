@@ -1,0 +1,6 @@
+<div class="video-jumbo" :style="{ width, height }">
+  <video :src="src" autoplay muted loop></video>
+  <div class="cover" :style="{ background: coverColor }">
+    <slot></slot>
+  </div>
+</div>

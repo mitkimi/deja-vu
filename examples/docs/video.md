@@ -7,14 +7,14 @@ Deja vu 对此进行了一些封装
 
 :::demo
 ```html
-<Video src="https://cdn.heelysfly.com/heelysflycom/pcweb/19s.mp4"></Video>
+<Video src="http://cdn.illiaccess.com/video/TONES%20AND%20I%20-%20DANCE%20MONKEY%20(Piano%20cover)%20by%20Peter%20Buka.mp4"></Video>
 ```
 :::
 
 ## Attributes
 | 参数 | 说明 | 类型 | 可选值 | 默认值 | 备注 |
 | :----- | :----- | :----- | :----- | :----- | :----- |
-| src | 视频播放地址或列表 | String/Array[String] | - | - | - |
+| src | 视频播放地址或列表 | String/Array[String]/Array[Object] | - | - | - |
 | width | 播放器宽度 | Number | - | 600 | - |
 | height | 播放器高度 | Number | - | 377 | - |
 | preload | 预加载 | String | - | - | video 标签属性 |
@@ -27,7 +27,7 @@ Deja vu 对此进行了一些封装
 
 :::demo
 ```html
-<Video src="https://cdn.heelysfly.com/heelysflycom/pcweb/19s.mp4"></Video>
+<Video src="http://cdn.illiaccess.com/video/TONES%20AND%20I%20-%20DANCE%20MONKEY%20(Piano%20cover)%20by%20Peter%20Buka.mp4"></Video>
 ```
 :::
 
@@ -46,8 +46,8 @@ export default {
   data () {
     return {
       videoList: [
-        'https://cdn.heelysfly.com/heelysflycom/pcweb/8s.mp4',
-        'https://cdn.heelysfly.com/heelysflycom/pcweb/19s.mp4'
+        '//cdn.illiaccess.com/video/TONES%20AND%20I%20-%20DANCE%20MONKEY%20(Piano%20cover)%20by%20Peter%20Buka.mp4',
+        '//cdn.illiaccess.com/video/%E6%8A%96%E9%9F%B3%E9%A3%8E%E6%A0%BC%E6%AF%95%E4%B8%9A%E5%AD%A3%E6%96%87%E5%AD%97%E6%A0%87%E9%A2%98logo%E7%89%87%E5%A4%B4.mp4'
       ]
     }
   }
@@ -70,16 +70,16 @@ export default {
     return {
       videoList: [
         {
-          name: '8s 宣传片',
+          name: 'TONES AND I-DANCE MONKEY (Piano cover) by Peter Buka',
           poster: 'https://www.heelysfly.com/_nuxt/img/aecb0591556913.5e349151df357.a72b413.jpg',
-          duration: 8,
-          url: 'https://cdn.heelysfly.com/heelysflycom/pcweb/8s.mp4'
+          duration: 191,
+          url: '//cdn.illiaccess.com/video/TONES%20AND%20I%20-%20DANCE%20MONKEY%20(Piano%20cover)%20by%20Peter%20Buka.mp4'
         },
         {
-          name: '19s 宣传片',
+          name: '抖音风格毕业季文字标题logo片头',
           poster: 'https://www.heelysfly.com/_nuxt/img/5af70491556913.5e349151d7573.60ee5f6.jpg',
-          duration: 19,
-          url: 'https://cdn.heelysfly.com/heelysflycom/pcweb/19s.mp4'
+          duration: 5,
+          url: '//cdn.illiaccess.com/video/%E6%8A%96%E9%9F%B3%E9%A3%8E%E6%A0%BC%E6%AF%95%E4%B8%9A%E5%AD%A3%E6%96%87%E5%AD%97%E6%A0%87%E9%A2%98logo%E7%89%87%E5%A4%B4.mp4'
         }
       ]
     }
