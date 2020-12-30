@@ -7,7 +7,7 @@ Deja vu 对此进行了一些封装
 
 :::demo
 ```html
-<Video src="http://cdn.illiaccess.com/video/TONES%20AND%20I%20-%20DANCE%20MONKEY%20(Piano%20cover)%20by%20Peter%20Buka.mp4"></Video>
+<Video src="//cdn.illiaccess.com/video/TONES%20AND%20I%20-%20DANCE%20MONKEY%20(Piano%20cover)%20by%20Peter%20Buka.mp4"></Video>
 ```
 :::
 
@@ -27,7 +27,7 @@ Deja vu 对此进行了一些封装
 
 :::demo
 ```html
-<Video src="http://cdn.illiaccess.com/video/TONES%20AND%20I%20-%20DANCE%20MONKEY%20(Piano%20cover)%20by%20Peter%20Buka.mp4"></Video>
+<Video src="//cdn.illiaccess.com/video/TONES%20AND%20I%20-%20DANCE%20MONKEY%20(Piano%20cover)%20by%20Peter%20Buka.mp4"></Video>
 ```
 :::
 
