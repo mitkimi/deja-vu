@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import AboutP from './about.md'
+import '@/assets/docs.less'
 
 const AboutPage = {
   name: 'AboutPage',
