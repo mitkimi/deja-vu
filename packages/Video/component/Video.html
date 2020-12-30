@@ -1,11 +1,30 @@
-<div class="dv-video">
+<div class="dv-video" :style="{ width: this.width || '600px', height: this.height || '377px'}">
   <video ref="video"
     class="dv-video__video"
     @timeupdate="updatePlayerStatus"
     @click="handlePlayStatusToggle">
-    <source src="http://bjcloudhongqi.wengegroup.com:9080/ilg-streamer/20201223/5fe2e50f1b96afd74b461e99/03cb3dc4-0ab3-4ca6-b5bc-f999cff38104.mp4" />
   </video>
-  <div class="dv-video__controls">
+  <div class="dv-video__fade-pop" :style="popStyle">
+    <img v-if="isPlaying" :src="icons.PlayIcon" />
+    <img v-else :src="icons.PauseIcon" />
+  </div>
+  <div class="dv-video__play-list-container" v-if="playList.length > 1 && drawerShow" @click="handleCloseListDrawer">
+    <div class="dv-video__play-list-container__drawer">
+      <div :class="`dv-video__play-list-container__drawer__li ${playingIndex === index ? 'active' : ''}`"
+        v-for="item,index in playList"
+        :key="index"
+        @click.stop="handleSelectListVideo(index)">
+        <div class="poster">
+          <img :src="item.poster" />
+        </div>
+        <div class="info">
+          <div class="name">{{item.name}}</div>
+          <div class="duration">{{item.duration | timePeriod}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dv-video__controls" :style="isPlaying ? {} : { opacity: 1 }">
     <div class="dv-video__controls__process">
       <div class="dv-video__controls__process__bar">
         <div class="dv-video__controls__process__bar--played" :style="processStyle"></div>
@@ -13,15 +32,34 @@
     </div>
     <div class="dv-video__controls__buttons">
       <div class="left">
-        <div class="dv-video__controls__buttons__button" v-if="!isPlaying" @click="handlePlayStatusToggle">p</div>
-        <div class="dv-video__controls__buttons__button" v-else @click="handlePlayStatusToggle">||</div>
-        <div class="dv-video__controls__buttons__button">so</div>
+        <div class="dv-video__controls__buttons__button" v-if="!isPlaying" @click="handlePlayStatusToggle">
+          <img :src="icons.PlayIcon" />
+        </div>
+        <div class="dv-video__controls__buttons__button" v-else @click="handlePlayStatusToggle">
+          <img :src="icons.PauseIcon" />
+        </div>
+        <div class="dv-video__controls__cursor" v-if="playList.length > 1">
+          <div :class="`dv-video__controls__buttons__button ${playingIndex <= 0 ? 'dv-video__controls__buttons__button--disabled' : ''}`" @click="handlePrev">
+            <img :src="icons.PrevIcon" />
+          </div>
+          <div :class="`dv-video__controls__buttons__button ${playingIndex >= playList.length - 1? 'dv-video__controls__buttons__button--disabled' : ''}`" @click="handleNext">
+            <img :src="icons.NextIcon" />
+          </div>
+        </div>
+        <div class="dv-video__controls__volume">
+          <div class="dv-video__controls__buttons__button">so</div>
+        </div>
       </div>
       <div class="right">
         <div class="dv-video__controls__status">
           {{current | timePeriod}} / {{duration | timePeriod}}
         </div>
-        <div class="dv-video__controls__buttons__button" @click="handlePlayerFullscreen">fu</div>
+        <div class="dv-video__controls__buttons__button" @click="handlePlayerFullscreen">
+          <img :src="icons.FullScreenIcon" />
+        </div>
+        <div class="dv-video__controls__buttons__button" v-if="playList.length > 1" @click="handleListDrawerToggle">
+          <img :src="icons.ListIcon" />
+        </div>
       </div>
     </div>
   </div>
