@@ -42,11 +42,11 @@ module.exports = {
     config.module
       .rule('md')
       .test(/\.md$/)
-      .use('html-loader')
-      .loader('html-loader')
+      .use('vue-loader')
+      .loader('vue-loader')
       .end()
-      .use('markdown-loader')
-      .loader('markdown-loader')
+      .use('md-loader')
+      .loader('./md-loader/index.js')
       .end()
   }
 }

@@ -10,12 +10,20 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    meta: {
+      title: 'Deja vu'
+    },
     component: Home
   },
   {
     path: '/demo',
     name: 'Demo',
     component: Demo
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('../scene/About')
   },
   {
     path: '/guide/:routeId',
@@ -26,24 +34,11 @@ const routes = [
     path: '/components/:routeId',
     name: 'Components',
     component: Document
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('../scene/About')
-  },
-  {
-    path: '/developer',
-    name: 'Developer',
-    component: () => import('../scene/Developer')
   }
   // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  //   path: '/developer',
+  //   name: 'Developer',
+  //   component: () => import('../scene/Developer')
   // }
 ]
 

@@ -14,7 +14,9 @@
         </div>
       </div>
       <div class="main">
-        <div class="markdown-body" v-html="markdown"></div>
+        <div class="markdown-body">
+          <div v-for="c,index in mdList" :key="index" :is="allMds[c]" v-if="c === $route.params.routeId"></div>
+        </div>
       </div>
     </div>
   </div>

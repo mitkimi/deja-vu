@@ -1,14 +1,11 @@
 import Header from '@/components/Header'
+import AboutP from './about.md'
 
 const AboutPage = {
   name: 'AboutPage',
   components: {
-    'dv-header': Header
-  },
-  data () {
-    return {
-      markdown: require('./about.md')
-    }
+    'dv-header': Header,
+    'about-page': AboutP
   }
 }
 

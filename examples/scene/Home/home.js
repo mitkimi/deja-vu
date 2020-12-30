@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 
 const HomeScene = {
-  name: 'Home page',
+  name: 'Homepage',
   components: {
     'dv-header': Header
   }

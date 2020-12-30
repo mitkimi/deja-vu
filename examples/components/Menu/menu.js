@@ -1,4 +1,4 @@
-import SubMenu from '../../scene/Document/menu'
+import SubMenu from '../../scene/Document/nav'
 
 const MenuComponent = {
   name: 'Menu',
@@ -42,8 +42,10 @@ const MenuComponent = {
         }
       })()
       const param = SubMenu[key] ? SubMenu[key][flag].key : null
+      const path = `/${key}${param ? '/' + param : ''}`
+      console.log('menu/ next path:', path)
       this.$router.push({
-        path: `/${key}${param ? '/' + param : ''}`
+        path
       })
     }
   }

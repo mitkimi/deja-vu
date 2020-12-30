@@ -6,7 +6,9 @@ const LevelOneStyle = {
 
 const LevelTwoStyle = {
   fontSize: '12px',
-  color: '#999999'
+  color: '#999999',
+  marginTop: '25px',
+  marginBottom: '10px'
 }
 
 const components = [
@@ -67,12 +69,12 @@ const components = [
     name: 'Border 边框',
     style: {}
   },
-  {
-    key: 'icon',
-    isMarkdownPage: true,
-    name: 'Icon 图标',
-    style: {}
-  },
+  // {
+  //   key: 'icon',
+  //   isMarkdownPage: true,
+  //   name: 'Icon 图标',
+  //   style: {}
+  // },
   {
     key: 'button',
     isMarkdownPage: true,

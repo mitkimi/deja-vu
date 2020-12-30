@@ -1,8 +1,10 @@
+/* eslint-disable */
 import 'highlight.js/styles/github.css'
 import 'github-markdown-css'
 import hljs from 'highlight.js'
 import Header from '@/components/Header'
-import Menu from './menu'
+import Menu from './nav'
+import allMds from '../../docs'
 
 const highlightCode = () => {
   const preEl = document.querySelectorAll('pre')
@@ -16,11 +18,13 @@ const DocumnetScene = {
   components: {
     'dv-header': Header
   },
+  data () {
+    return {
+      allMds,
+      mdList: []
+    }
+  },
   computed: {
-    markdown () {
-      const buffer = require(`../../docs/${this.$route.params.routeId}.md`)
-      return buffer
-    },
     menu () {
       const buffer = this.queryMenu()
       return buffer
@@ -31,20 +35,31 @@ const DocumnetScene = {
   },
   mounted () {
     highlightCode()
+    this.loadMarkdown()
   },
   updated () {
     highlightCode()
+    // this.loadMarkdown()
   },
   methods: {
-    test () {
-      hljs.initHighlighting()
+    loadMarkdown () {
+      const arr = []
+      const buffer = [...Menu.guide, ...Menu.components]
+      buffer.map(e => {
+        if (e.isMarkdownPage) {
+          arr.push(e.key)
+        }
+      })
+      this.mdList = arr
     },
     handleRoute (key) {
       const buffer = this.$route.path.split('/')
       buffer.shift()
       const menuStr = buffer[0]
+      const path = `/${menuStr}/${key}`
+      console.log('next path', path)
       this.$router.push({
-        path: `/${menuStr}/${key}`
+        path
       })
     },
     queryMenu () {
