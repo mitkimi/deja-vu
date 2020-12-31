@@ -14,6 +14,10 @@ const MenuComponent = {
           name: '组件'
         },
         {
+          key: 'developer',
+          name: '开发者'
+        },
+        {
           key: 'about',
           name: '关于'
         }
