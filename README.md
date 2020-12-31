@@ -20,6 +20,4 @@ Vue.use(DejaVu)
 
 ## Developer
 
-```bash
-
-```
+[show developer info](./examples/scene/Developer/developer.md)

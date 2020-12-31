@@ -1,25 +1,28 @@
 import Header from '@/components/Header'
-const md = require('markdown-it')({
-  html: true,
-  linkify: true,
-  typographer: true
-})
+import DevelopP from './developer.md'
+import '@/assets/docs.less'
+import 'highlight.js/styles/github.css'
+import hljs from 'highlight.js'
 
-const DeveloperPage = {
-  name: 'DeveloperPage',
+const highlightCode = () => {
+  const preEl = document.querySelectorAll('pre')
+  preEl.forEach((el) => {
+    hljs.highlightBlock(el)
+  })
+}
+
+const DevelopPage = {
+  name: 'AboutPage',
   components: {
-    'dv-header': Header
-  },
-  data () {
-    return {
-      markdown: ''
-    }
+    'dv-header': Header,
+    'developer-page': DevelopP
   },
   mounted () {
-    const buffer = md.render('# 你好')
-    // this.markdown = buffer
-    console.log(buffer)
+    highlightCode()
+  },
+  updated () {
+    highlightCode()
   }
 }
 
-export default DeveloperPage
+export default DevelopPage

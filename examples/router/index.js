@@ -34,12 +34,12 @@ const routes = [
     path: '/components/:routeId',
     name: 'Components',
     component: Document
+  },
+  {
+    path: '/developer',
+    name: 'Developer',
+    component: () => import('../scene/Developer')
   }
-  // {
-  //   path: '/developer',
-  //   name: 'Developer',
-  //   component: () => import('../scene/Developer')
-  // }
 ]
 
 const router = new VueRouter({

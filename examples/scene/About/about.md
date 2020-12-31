@@ -3,6 +3,8 @@
 ## 链接
 [代码仓库](https://github.com/mitkimi/deja-vu)
 
+[视觉设计](https://www.yuque.com/mitkimi/uamilm)
+
 [更新日志](/#/components/changelog)
 
 [开发者](/#/developer)
