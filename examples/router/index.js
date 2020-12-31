@@ -11,33 +11,45 @@ const routes = [
     path: '/',
     name: 'Home',
     meta: {
-      title: 'Deja vu'
+      title: 'Deja vu - A very light Component Library for Vue.js.'
     },
     component: Home
   },
   {
-    path: '/demo',
+    path: '/play',
     name: 'Demo',
     component: Demo
   },
   {
     path: '/about',
     name: 'About',
+    meta: {
+      title: '关于 - Deja vu - A very light Component Library for Vue.js.'
+    },
     component: () => import('../scene/About')
   },
   {
     path: '/guide/:routeId',
     name: 'Guide',
+    meta: {
+      title: '指南 - Deja vu - A very light Component Library for Vue.js.'
+    },
     component: Document
   },
   {
     path: '/components/:routeId',
     name: 'Components',
+    meta: {
+      title: '组件 - Deja vu - A very light Component Library for Vue.js.'
+    },
     component: Document
   },
   {
     path: '/developer',
     name: 'Developer',
+    meta: {
+      title: '开发者 - Deja vu - A very light Component Library for Vue.js.'
+    },
     component: () => import('../scene/Developer')
   }
 ]
@@ -48,6 +60,9 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   document.documentElement.scrollTop = 0
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
   next()
 })
 

@@ -10,7 +10,7 @@
 [开发者](/#/developer)
 
 ## 社区
-[在线讨论(暂无)]()
+[在线讨论](https://github.com/mitkimi/deja-vu/discussions/)
 
 [反馈建议](https://github.com/mitkimi/deja-vu/issues)
 

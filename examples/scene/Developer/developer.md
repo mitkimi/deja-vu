@@ -51,12 +51,12 @@ Github 地址是 [https://github.com/mitkimi/deja-vu](https://github.com/mitkimi
 
 我们自己的开发者在 `develop` 分支上进行开发
 
-##### 热修复分支
+###### 热修复分支
 热修复分支是 `hotfix`
 
 当您发现任何 bug 或者问题，可以通过项目 [issues](https://github.com/mitkimi/deja-vu/issues) 向我提出，问题将会尽快修复
 
-##### 生产分支
+###### 生产分支
 和生产环境同步的分支是生产分支
 
 生产分支是 `master`

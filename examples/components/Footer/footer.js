@@ -7,7 +7,8 @@ const HeaderComponent = {
   },
   data () {
     return {
-      version: packageJson.version
+      version: packageJson.version,
+      year: new Date().getFullYear()
     }
   }
 }
