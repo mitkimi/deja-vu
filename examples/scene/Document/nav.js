@@ -116,6 +116,12 @@ const components = [
     isMarkdownPage: true,
     name: 'Particles 粒子特效',
     style: {}
+  },
+  {
+    key: 'global',
+    isMarkdownPage: true,
+    name: 'Global 地球仪',
+    style: {}
   }
 ]
 

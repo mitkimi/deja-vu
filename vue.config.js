@@ -35,8 +35,8 @@ module.exports = {
       .use('babel')
       .loader('babel-loader')
       .tap(options => {
-          // 修改它的选项...
-          return options
+        // 修改它的选项...
+        return options
       })
     // 用于解析 md 文件
     config.module

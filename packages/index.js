@@ -2,12 +2,14 @@ import Button from './Button'
 import Video from './Video'
 import VideoJumbo from './VideoJumbo'
 import Particles from './Particles'
+import Global from './Global'
 
 const components = [
   Button,
   Video,
   VideoJumbo,
-  Particles
+  Particles,
+  Global
 ]
 const install = function (Vue) {
   if (install.installed) return
