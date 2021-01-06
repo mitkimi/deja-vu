@@ -74,7 +74,7 @@ export default {
 | 参数 | 说明 | 类型 | 可选值 | 默认值 | 备注 |
 | :----- | :----- | :----- | :----- | :----- | :----- |
 | width | 容器宽度 | String | - | 100% | - |
-| height | 容器高度 | String | - | 100% | 父容器应有高度 |
+| height | 容器高度 | String | - | 400px | - |
 | rotate | 自动旋转 | Boolean | - | false | - |
 | data | 传入数据 | Array | - | - | 详见使用方法 |
 | config | 配置 | Object | - | - | 详见使用方法 |
