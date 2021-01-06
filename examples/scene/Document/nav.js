@@ -118,9 +118,21 @@ const components = [
     style: {}
   },
   {
+    key: 'globe',
+    isMarkdownPage: true,
+    name: 'Globe 地球仪',
+    style: {}
+  },
+  {
+    name: 'abandoned',
+    style: {
+      ...LevelTwoStyle
+    }
+  },
+  {
     key: 'global',
     isMarkdownPage: true,
-    name: 'Global 地球仪',
+    name: 'Global 地球仪[弃用]',
     style: {}
   }
 ]

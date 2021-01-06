@@ -9,11 +9,11 @@
 ## 基本用法
 :::demo
 ```html
-<Global rotate></Global>
+<Global></Global>
 ```
 :::
 
-## 使用地球仪表示进出
+## 使用地球仪展示线条
 当使用地球仪表示进出时，遵循以下的参数
 :::demo
 ```html
@@ -34,9 +34,9 @@ export default {
           outColor: '#00FF00'
         },
         {
-          e: 'TW',
-          i: 'Europe',
-          v: 500000
+          e: 'JP',
+          i: 'CN',
+          v: 500000,
         }
       ],
       configs: {
@@ -86,7 +86,7 @@ export default {
 - data 的数据格式是 `Array(Object)`
 - 每个 Object 至少包含 3 个参数： `e/i/v`
   - e 表示输出国/地区（from），只能是国家或地区的代码
-  - i 表示输入国/地区（to），可以是国家或地区的代码，也可以是洲
+  - i 表示输入国/地区（to），只能是国家或地区的代码
   - v 表示值，值越大，光点越多
 - 可单独设置某一条线的颜色
   - inColor
@@ -102,24 +102,15 @@ export default {
     inColor: '#0000FF',
     outColor: '#00FF00'
   },
-  // 中国台湾向欧洲输出的例子
+  // 日本向中国输出的例子
   {
-    e: 'TW',
-    i: 'Europe',
+    e: 'JP',
+    i: 'CN',
     v: 500000
   }
   // ... some codes ...
 ]
 ```
-洲 - 参数表
-| 洲 | 参数 |
-| :----- | :----- |
-| 大洋洲 | Oceania |
-| 北美洲 | North America |
-| 南美洲 | South America |
-| 欧洲 | Europe |
-| 亚洲 | Asia |
-| 非洲 | Africa |
 
 ### config
 

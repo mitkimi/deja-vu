@@ -37,6 +37,10 @@ export default {
         }
       }
     },
+    data: {
+      type: Array,
+      default: []
+    },
     rotate: {
       type: Boolean,
       default: false
@@ -44,7 +48,7 @@ export default {
   },
   data () {
     return {
-      data: []
+      data: this.data
     }
   },
   mounted () {
