@@ -11,6 +11,7 @@
 ```javascript
 import Vue from 'vue'
 import DejaVu from '@mitkimi/deja-vu'
+import '@mitkimi/deja-vu/lib/@mitkimi/deja-vu.css'
 import App from './App'
 
 Vue.use(DejaVu)
@@ -21,7 +22,9 @@ new Vue({
 })
 ```
 
-以上代码便完成了 Deja vu 的引入。样式文件无需单独引入。
+以上代码便完成了 Deja vu 的引入。
+
+值得一提的是，样式文件需要单独引入。
 
 ### 按需加载
 
