@@ -41,7 +41,7 @@ earth 属性应传入字符串类型，当传入 url 时，将会根据 url 的�
 :::demo
 ```html
 <template>
-  <Globe earth="default" :data="data" :cover="cover" style="background: #000000"></Globe>
+  <Globe earth="earth-dark" :data="data" :cover="cover" style="background: #000000"></Globe>
 </template>
 
 <script>

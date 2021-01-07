@@ -105,8 +105,6 @@ export default {
         .hexBinPointsData(this.data)
         .enablePointerInteraction(false)
 
-      // 自定义层
-      // .customLayerData([])
       // 多边形层
       this.haze && world
         .polygonsData(DemoData.features) // 多边形数据

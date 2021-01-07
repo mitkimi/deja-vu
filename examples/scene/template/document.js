@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import Header from '~@/components/Header'
 
 const DocumnetScene = {
   name: 'Documnet page',

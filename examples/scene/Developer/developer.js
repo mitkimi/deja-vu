@@ -1,7 +1,7 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from '~@/components/Header'
+import Footer from '~@/components/Footer'
 import DevelopP from './developer.md'
-import '@/assets/docs.less'
+import '~@/assets/docs.less'
 import 'highlight.js/styles/github.css'
 import hljs from 'highlight.js'
 

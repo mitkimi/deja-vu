@@ -15,7 +15,7 @@ module.exports = {
   chainWebpack: config => {
     // vue默认@指向src目录，这里要修正为examples，另外新增一个~指向packages
     config.resolve.alias
-      .set('@', path.resolve('examples'))
+      .set('~@', path.resolve('examples'))
       .set('~', path.resolve('packages'))
     // lib目录是组件库最终打包好存放的地方，不需要eslint检查
     // examples/docs是存放md文档的地方，也不需要eslint检查

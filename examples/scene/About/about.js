@@ -1,7 +1,7 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from '~@/components/Header'
+import Footer from '~@/components/Footer'
 import AboutP from './about.md'
-import '@/assets/docs.less'
+import '~@/assets/docs.less'
 
 const AboutPage = {
   name: 'AboutPage',

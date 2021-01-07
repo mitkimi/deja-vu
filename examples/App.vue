@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import ToTop from '@/components/ToTop'
+import ToTop from '~@/components/ToTop'
 
 export default {
   components: {

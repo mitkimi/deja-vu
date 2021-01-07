@@ -1,7 +1,7 @@
 import 'highlight.js/styles/github.css'
-import '@/assets/docs.less'
+import '~@/assets/docs.less'
 import hljs from 'highlight.js'
-import Header from '@/components/Header'
+import Header from '~@/components/Header'
 import Menu from './nav'
 import allMds from '../../docs'
 
