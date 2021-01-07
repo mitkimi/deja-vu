@@ -9,7 +9,7 @@
 ## 基本用法
 :::demo
 ```html
-<Globe nightSky haze rotate></Globe>
+<Globe nightSky></Globe>
 ```
 :::
 
@@ -26,16 +26,22 @@
 | nightSky | 显示夜空 | Boolean | - | false | - |
 | atmosphere | 显示大气 | Boolean | - | false | - |
 | graticules | 显示经纬网格线 | Boolean | - | false | - |
-| haze | 显示漂浮的地形 | Boolean | - | false | haze 的意思时霾 |
-| earth | 地球贴图 | String | default/earth-dark | default | - |
+| haze | 显示漂浮的地形 | Boolean | - | false | haze 是霾的意思 |
+| earth | 地球贴图 | String | default/earth-dark/earth-night/url | default | - |
 | cover | 地球的覆盖物 | Boolean/Object | - | false | - |
+
+#### earth
+earth 属性应传入字符串类型，当传入 url 时，将会根据 url 的贴图对球体进行渲染
+当传入 `default`/`earth-dark`/`earth-night` 作为参数时，会渲染成以下效果
+![earth demo](../assets/images/earth-demo.jpg)
+
 
 ## 使用地球仪展示数据
 当使用地球仪展示数据时，遵循以下的参数
 :::demo
 ```html
 <template>
-  <Globe earth="earth-dark" :data="data" :cover="cover" style="background: #000000"></Globe>
+  <Globe earth="default" :data="data" :cover="cover" style="background: #000000"></Globe>
 </template>
 
 <script>

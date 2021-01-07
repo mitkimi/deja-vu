@@ -2,6 +2,7 @@ import Globe from 'globe.gl'
 import nightSky from './assets/night-sky.png'
 import earthDefault from './assets/world.jpg'
 import earthDark from './assets/earth-dark.jpg'
+import earthNight from './assets/earth-night.jpg'
 import bumpMap from './assets/earth-topology.png'
 import DemoData from './assets/ne_110m+admin_0.geo.json'
 
@@ -58,7 +59,8 @@ export default {
       earthArr: {
         // eslint-disable-next-line
         'default': earthDefault,
-        'earth-dark': earthDark
+        'earth-dark': earthDark,
+        'earth-night': earthNight
       }
     }
   },
@@ -75,7 +77,7 @@ export default {
       world.width(dom.clientWidth)
         .height(dom.clientHeight)
       // 地球层
-      world.globeImageUrl(this.earthArr[this.earth]) // 地球贴图
+      world.globeImageUrl(this.earthArr[this.earth] || this.earth) // 地球贴图 自动贴图
       this.pumb && world.bumpImageUrl(bumpMap) // 凹凸贴图
       world.showAtmosphere(this.atmosphere) // 展示大气层
       world.showGraticules(this.graticules) // 展示经纬度网
