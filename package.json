@@ -1,6 +1,6 @@
 {
   "name": "@mitkimi/deja-vu",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A Component Library for Vue.js.",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -11,7 +11,7 @@
     "publish:web": "npm run build && scp -r ./dist/* root@47.104.80.66:/home/www/uiweb@deja-vu.illiaccess.com/dist",
     "publish:all": "npm run publish:npm && npm run publish:web"
   },
-  "main": "lib/deja-vu.common.js",
+  "main": "lib/@mitkimi/deja-vu.common.js",
   "author": "mitkimi",
   "repository": {
     "type": "git",
