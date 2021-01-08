@@ -5,7 +5,7 @@ import earthDark from './assets/earth-dark.jpg'
 import earthNight from './assets/earth-night.jpg'
 import bumpMap from './assets/earth-topology.png'
 import DemoData from './assets/ne_110m+admin_0.geo.json'
-
+import isInPolygon from './ins'
 export default {
   name: 'Globe',
   props: {
@@ -46,7 +46,7 @@ export default {
       default: false
     },
     data: {
-      type: [Boolean, Array],
+      type: [Boolean, Object],
       default: false
     },
     rotate: {
@@ -61,13 +61,105 @@ export default {
         'default': earthDefault,
         'earth-dark': earthDark,
         'earth-night': earthNight
-      }
+      },
+      dataForRender: []
     }
   },
   mounted () {
+    this.formatData()
     this.init3dEarth()
   },
   methods: {
+    formatData () {
+      if (this.data.type === 'lnl') {
+        this.dataForRender = this.data.list
+        return
+      }
+      if (this.data.type === 'country') {
+        const sourceData = this.data.list
+        // 对中国组成部分的处理
+        const countryArr = [] // 所有国家和地区
+        sourceData.map((listItem) => {
+          // 对中国的处理
+          if (listItem.countryName === 'China') {
+            countryArr.push('China')
+            countryArr.push('Taiwan')
+          } else if (listItem.countryName === ('China Mainland' || 'ChinaMainland' || 'Mainland')) {
+            countryArr.push('China')
+          } else {
+            countryArr.push(listItem.countryName)
+          }
+        })
+        // 整合数据
+        let allPoints = [] // 用于渲染的点，格式为经纬度和值
+        countryArr.map((country) => {
+          // console.log('country', country)
+          DemoData.features.map((e) => {
+            let contourPoints = [] // 地区轮廓点
+            console.log('country', e.properties.ADMIN)
+            if (e.properties.ADMIN === country) {
+              // e.geometry.coordinates 是数组，元素也是数组，需要两层解构
+              let arr = []
+              e.geometry.coordinates.map(lay1 => {
+                if (typeof lay1[0][0] === 'number' && typeof lay1[0][1] === 'number') {
+                  arr = [...arr, ...lay1]
+                } else {
+                  lay1.map(lay2 => {
+                    arr = [...arr, ...lay2]
+                  })
+                }
+              })
+              contourPoints = arr
+            }
+            // console.log('contourPoints', contourPoints) // 当前国家或地区的轮廓点
+            const filledPoints = this.fillPoints(contourPoints) // 运行补点算法
+            // const filledPoints = [] // 不补点
+            const thisCountryAllPoints = [...contourPoints, ...filledPoints]
+            const dataSet = []
+            thisCountryAllPoints.map(f => {
+              const obj = {
+                lng: f[0],
+                lat: f[1],
+                val: 1
+              }
+              dataSet.push(obj)
+            })
+            allPoints = [...allPoints, ...dataSet]
+            // allPoints = dataSet
+          })
+        })
+        console.log('allPoints', allPoints)
+        this.dataForRender = allPoints
+      }
+    },
+    fillPoints (contourPoints) {
+      const arr = contourPoints
+      const filledPoints = []
+      const obj = {
+        left: 10000,
+        right: -10000,
+        top: 10000,
+        bottom: -10000
+      }
+      arr.map(e => {
+        // console.log('e', e)
+        e[0] < obj.left ? obj.left = e[0] : console.log()
+        e[0] > obj.right ? obj.right = e[0] : console.log()
+        e[1] < obj.top ? obj.top = e[1] : console.log()
+        e[1] > obj.bottom ? obj.bottom = e[1] : console.log()
+      })
+      const buff = 5 * (this.cover.resolution || 2) * 7
+      const widthStep = (obj.right - obj.left) / buff
+      const heightStep = (obj.bottom - obj.top) / buff
+      for (let w = 0; w <= buff; w += 1) {
+        const ww = obj.left + w * widthStep
+        for (let h = 0; h <= buff; h += 1) {
+          const hh = obj.top + h * heightStep
+          isInPolygon([ww, hh], arr) && filledPoints.push([ww, hh])
+        }
+      }
+      return filledPoints
+    },
     init3dEarth () {
       const dom = this.$refs.container
       const GLOBE = Globe()
@@ -97,12 +189,14 @@ export default {
       // 弧层
       // 六角仓层
       this.data && world
-        .hexBinPointWeight('pop')
-        .hexBinResolution(2)
+        .hexBinPointWeight('val')
+        .hexBinResolution(this.cover.resolution || 2)
         .hexTopColor(() => '#0066cc')
         .hexSideColor(() => '#3399ee')
-        .hexBinMerge(true)
-        .hexBinPointsData(this.data)
+        .hexBinPointsData(this.dataForRender)
+        .hexAltitude((d) => {
+          return d.points[0].val / 5
+        }) // 高度设置
         .enablePointerInteraction(false)
 
       // 多边形层
