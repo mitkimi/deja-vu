@@ -148,7 +148,15 @@ export default {
 | color | 覆盖物颜色 | function | - | `() => '#1c2044'` | - | -->
 
 
+### 贴图下载
+> 在绘制地球贴图时，请按照以下图片作为每片大陆的绘制基础，否则将无法正确对应覆盖物的位置
 
+- 线框
+![线框](../../packages/Globe/component/assets/outline.png)
+- earth-dark
+![earth-dark](../../packages/Globe/component/assets/earth-dark.jpg)
+- earth-night
+![earth-night](../../packages/Globe/component/assets/earth-night.jpg)
 ### 国家/地区对照表
 > 值得注意的是：当涉及到中国时，将被区分为大陆地区和台湾地区，具体使用方法是：
 
