@@ -1,0 +1,5 @@
+<div :class="`dv-switch ${isChecked ? 'active' : ''} ${disabled ? 'disabled' : ''}`"
+  :style="{ background: `${isChecked ? activeColor : inactiveColor}`}"
+  @click="handleSwitchToggle">
+  <div class="dv-switch-btn"></div>
+</div>
