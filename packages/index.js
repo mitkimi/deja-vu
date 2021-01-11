@@ -2,8 +2,10 @@ import Button from './Button'
 import Video from './Video'
 import VideoJumbo from './VideoJumbo'
 import Particles from './Particles'
-import Global from './Global'
+import Global from './Global' // 弃用
 import Globe from './Globe'
+import DSwitch from './Switch'
+import DImage from './Image'
 
 const components = [
   Button,
@@ -11,7 +13,9 @@ const components = [
   VideoJumbo,
   Particles,
   Global, // 弃用
-  Globe
+  Globe,
+  DSwitch,
+  DImage
 ]
 const install = function (Vue) {
   if (install.installed) return
