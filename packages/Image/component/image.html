@@ -1,5 +1,13 @@
-<div class="dv-image"
-  :style="{ width, height }">
+<div :class="`dv-image ${(border && typeof(border) === 'boolean') ? 'border' : ''} ${shadow && typeof(shadow) === 'boolean' ? 'shadow' : ''}`"
+  :style="{
+    width,
+    height,
+    border: border && typeof(border) === 'object' ? border.line : null,
+    padding: border && typeof(border) === 'object' ? border.padding : null,
+    borderRadius: border && typeof(border) === 'object' ? border.radius : null,
+    background: border && typeof(border) === 'object' ? border.background : null,
+    boxShadow: (shadow && typeof(shadow) === 'string') ? shadow : 'auto'
+  }">
   <img :alt="alt"
     :src="src"
     :style="{

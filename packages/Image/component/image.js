@@ -20,6 +20,17 @@ export default {
       type: String,
       default: null
     },
-    preview: Boolean
+    preview: Boolean,
+    border: {
+      type: [Boolean, Object],
+      default: false
+    },
+    shadow: {
+      type: [Boolean, String],
+      default: false
+    }
+  },
+  mounted () {
+    console.log('=>', 'this.shadow', typeof this.shadow === 'string')
   }
 }

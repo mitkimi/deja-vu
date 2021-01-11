@@ -6,6 +6,7 @@ import Global from './Global' // 弃用
 import Globe from './Globe'
 import DSwitch from './Switch'
 import DImage from './Image'
+import Avatar from './Avatar'
 
 const components = [
   Button,
@@ -15,7 +16,8 @@ const components = [
   Global, // 弃用
   Globe,
   DSwitch,
-  DImage
+  DImage, // 看看这个怎么办
+  Avatar
 ]
 const install = function (Vue) {
   if (install.installed) return

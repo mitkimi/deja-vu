@@ -1,0 +1,8 @@
+<div :class="`dv-avatar ${shape === 'circle' ? 'circle' : shape === 'square' ? 'square' : shape === 'icon' ? 'icon' : ''}`"
+  :style="{ width, height }">
+  <img v-if="src" :src="src" :style="{
+    objectFit: fit
+  }" />
+  <div v-if="icon">icon还没有启用</div>
+  <div v-if="name" class="name-container" :style="{ fontSize: nameSize }">{{ myName }}</div>
+</div>
