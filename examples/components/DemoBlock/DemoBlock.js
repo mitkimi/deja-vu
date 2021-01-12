@@ -1,5 +1,5 @@
 import collapse from './elTransition'
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/color-brewer.css'
 import hljs from 'highlight.js'
 const highlightCode = () => {
   const preEl = document.querySelectorAll('pre')

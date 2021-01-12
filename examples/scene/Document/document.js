@@ -1,4 +1,4 @@
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/color-brewer.css'
 import '@/assets/docs.less'
 import '@/assets/docs-related.less'
 import hljs from 'highlight.js'
