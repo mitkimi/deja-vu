@@ -1,5 +1,6 @@
 import 'highlight.js/styles/github.css'
 import '@/assets/docs.less'
+import '@/assets/docs-related.less'
 import hljs from 'highlight.js'
 import Header from '@/components/Header'
 import Menu from './nav'

@@ -1,0 +1,105 @@
+// 补充文档页面上绘制一些其他容器的样式
+
+// color 色彩
+.color-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+  .color-single-box {
+    width: calc((100% - 60px)/3);
+    // background: #efeff3;
+    padding: 20px 0;
+    .color-title {
+      font-size: 14px;
+      text-align: center;
+      color: #777770;
+      & > div:first-child {
+        font-size: 22px;
+        line-height: 30px;
+        color: #5C6B77;
+        margin-bottom: 10px;
+      }
+    }
+    .color-boxes {
+      margin-top: 32px;
+      .color-item {
+        width: calc(100% - 30px);
+        height: 44px;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: #081126;
+        cursor: pointer;
+        transition: width 300ms;
+        -moz-transition: width 300ms; /* Firefox 4 */
+        -webkit-transition: width 300ms; /* Safari 和 Chrome */
+        -o-transition: width 300ms; /* Opera */
+        font-size: 12px;
+        font-family: 'PingFangSC-Regular';
+        &:first-child {
+          border-radius: 4px 4px 0 0;
+        }
+        &:last-child {
+          border-radius: 0 0 4px 4px;
+        }
+        &:hover {
+          border-radius: 0 4px 4px 0;
+          width: calc(100% - 20px);
+        }
+      }
+      .dark {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.cen-color {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+  font-size: 12px;
+  transition: all 500ms;
+  margin-top: 40px;
+  &:hover {
+    margin-top: 20px;
+    height: 80px;
+    .color-pad {
+      .color-hex {
+        opacity: 1;
+        height: auto;
+      }
+    }
+  }
+  .color-pad {
+    width: calc(100% / 12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 300ms;
+    position: relative;
+    height: 100%;
+    &:hover {
+      height: 90px;
+      border-radius: 6px 6px 0 0;
+      margin-top: -10px;
+    }
+    .color-hex {
+      opacity: 0;
+      transition: all 300ms;
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .dark {
+    color: #ffffff;
+  }
+}
