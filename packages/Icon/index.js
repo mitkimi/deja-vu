@@ -1,8 +1,8 @@
-import Button from './component'
+import Icon from './component'
 
 /* istanbul ignore next */
-Button.install = function (Vue) {
-  Vue.component(Button.name, Button)
+Icon.install = function (Vue) {
+  Vue.component(Icon.name, Icon)
 }
 
-export default Button
+export default Icon

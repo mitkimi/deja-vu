@@ -1,4 +1,5 @@
-import dictionary from './dictionary.json'
+import dict from './dictionary'
+
 export default {
   name: 'Icon',
   props: {
@@ -9,7 +10,12 @@ export default {
   },
   data () {
     return {
-      dictionary
+      dictionary: {}
     }
+  },
+  mounted () {
+    dict.map((e) => {
+      this.dictionary = { ...this.dictionary, ...e.icons }
+    })
   }
 }

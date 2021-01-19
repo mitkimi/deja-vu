@@ -6,9 +6,11 @@
 
 :::demo
 ```html
-<Icon class="icon-demo" type="dashboard-filled"></Icon>
-<Icon class="icon-demo" type="battery"></Icon>
-<Icon class="icon-demo" type="camera-fill"></Icon>
+<div>
+  <Icon class="icon-demo" type="dashboard"></Icon>
+  <Icon class="icon-demo" type="list"></Icon>
+  <Icon class="icon-demo" type="camera"></Icon>
+</div>
 
 <style>
 .icon-demo {
@@ -24,14 +26,18 @@
 ## 图标集合
 :::demo
 ```html
-<div class="icon-demo-container">
-  <div class="icon-demo-box" v-for="(item,index) in list" :key="index">
-    <Icon class="icon-demo-item" :type="item"></Icon>
-    <div class="name">{{ item }}</div>
+<div class="icon-demo" v-for="(item,index) in list" :key="index">
+  <div class="icon-demo-name">{{ item.name }}</div>
+  <div class="icon-demo-container">
+    <div class="icon-demo-box" v-for="(icon, iIndex) in item.iconList" :key="iIndex">
+      <Icon class="icon-demo-item" :type="icon"></Icon>
+      <div class="name">{{ icon }}</div>
+    </div>
+    <div class="icon-demo-box" v-if="item.iconList.length % 3 === 2" style="box-shadow: none;"></div>
   </div>
 </div>
 <script>
-const icons = require('../../packages/Icon/component/dictionary.json')
+const icons = require('../../packages/Icon/component/dictionary').default
 export default {
   data () {
     return {
@@ -39,9 +45,14 @@ export default {
     }
   },
   mounted () {
-    for (const key in icons) {
-      this.list.push(key)
-    }
+    icons.map(e => {
+      const iconList = []
+      for (const key in e.icons) {
+        iconList.push(key)
+      }
+      e.iconList = iconList
+    })
+    this.list = icons
   }
 }
 </script>

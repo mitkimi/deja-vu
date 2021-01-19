@@ -1,6 +1,6 @@
 {
   "name": "@mitkimi/deja-vu",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A Component Library for Vue.js.",
   "scripts": {
     "serve": "vue-cli-service serve",

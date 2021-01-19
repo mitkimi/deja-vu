@@ -1,3 +1,4 @@
 <button :class="btnClass" :disabled="disabled">
+  <Icon v-if="this.icon" :type="this.icon" class="icon"></Icon>
   <slot></slot>
 </button>

@@ -1,58 +1,81 @@
 @buttonHeight: 40px;
 @fontSize: 14px;
 .dv-button {
-  font-size: @fontSize;
-  padding: 0 @buttonHeight / 2;
-  height: @buttonHeight;
-  background: #f8f8f9;
-  border: 1px solid #efeff3;
-  color: #efeff3;
   cursor: pointer;
-  color: #333333;
   border-radius: 4px;
   outline: none;
   transition: all, 300ms;
-  &:hover {
-    border: 1px solid #cccccc;
-    color: #333333;
-    background: #eeeeee;
-  }
   &:disabled {
-    opacity: .6;
     cursor: not-allowed;
   }
+  .icon {
+    margin-right: 10px;
+  }
 }
-
-// 基础按钮样式
+// 尺寸样式污染
+.dv-button-large {
+  height: 40px;
+  font-size: 16px;
+  padding: 0 22px;
+}
+.dv-button-medium {
+  height: 32px;
+  font-size: 14px;
+  padding: 0 25px;
+}
+.dv-button-small {
+  height: 28px;
+  font-size: 14px;
+  padding: 0 18px;
+}
+.dv-button-mini {
+  height: 24px;
+  font-size: 12px;
+  padding: 0 11px;
+}
+// 类别样式污染
 .dv-button-primary {
-  border: 1px solid #409eff;
+  border: 1px solid #3471FF;
   color: #ffffff;
-  background: #409eff;
+  background: #3471FF;
+  &:hover {
+    background: #5A8AFC;
+  }
 }
-.dv-button-success {
-  border: 1px solid #67C23A;
-  color: #ffffff;
-  background: #67C23A;
+.dv-button-default {
+  border: 1px solid #DCDFE6;
+  color: #303133;
+  background: #ffffff;
+  &:hover {
+    color: #3471FF;
+    border: 1px solid #3471FF;
+    background: #FAFAFA;
+  }
 }
-.dv-button-info {
-  border: 1px solid #909399;
-  color: #ffffff;
-  background: #909399;
+.dv-button-dashed {
+  border: 1px dashed #DCDFE6;
+  color: #303133;
+  background: #ffffff;
+  &:hover {
+    color: #3471FF;
+    border: 1px dashed #3471FF;
+    background: #FAFAFA;
+  }
 }
-.dv-button-warning {
-  border: 1px solid #E6A23C;
-  color: #ffffff;
-  background: #E6A23C;
+.dv-button-text {
+  border: 1px solid #ffffff;
+  color: #303133;
+  background: #ffffff;
+  &:hover {
+    border: 1px solid #FAFAFA;
+    color: #333333;
+    background: #FAFAFA;
+  }
 }
-.dv-button-danger {
-  border: 1px solid #F56C6C;
-  color: #ffffff;
-  background: #F56C6C;
-}
-
-// 朴素按钮污染
-.dv-button-plain {
-  opacity: .6;
+.dv-button-link {
+  border: 1px solid #ffffff;
+  color: #3471FF;
+  background: #ffffff;
 }
 
 // 圆角按钮污染
@@ -62,6 +85,137 @@
 
 // 圆形按钮污染
 .dv-button-circle {
-  width: @buttonHeight;
   border-radius: 50%;
+  .icon {
+    margin: 0;
+  }
+}
+.dv-button-circle.dv-button-large {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+.dv-button-circle.dv-button-medium {
+  height: 32px;
+  width: 32px;
+  padding: 0;
+}
+.dv-button-circle.dv-button-small {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+}
+.dv-button-circle.dv-button-mini {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+
+// 方形按钮污染
+.dv-button-square {
+  .icon {
+    margin: 0;
+  }
+}
+.dv-button-square.dv-button-large {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+.dv-button-square.dv-button-medium {
+  height: 32px;
+  width: 32px;
+  padding: 0;
+}
+.dv-button-square.dv-button-small {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+}
+.dv-button-square.dv-button-mini {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+// 危险按钮污染
+.dv-button-danger.dv-button-primary {
+  border: 1px solid#D01834;
+  color: #D01834;;
+  background: #ffffff;
+  &:hover {
+    background: #D01834;
+    color: #ffffff;
+  }
+}
+.dv-button-danger.dv-button-default {
+  border: 1px solid #D01834;;
+  color: #D01834;
+  background: #ffffff;
+  &:hover {
+    background: #FAFAFA;
+  }
+}
+.dv-button-danger.dv-button-dashed {
+  border: 1px dashed #D01834;
+  color: #D01834;
+  background: #ffffff;
+  &:hover {
+    color: #D01834;
+    border: 1px dashed #D01834;
+    background: #FAFAFA;
+  }
+}
+.dv-button-danger.dv-button-text {
+  border: 1px solid #ffffff;
+  color: #D01834;
+  background: #ffffff;
+  &:hover {
+    border: 1px solid #FAFAFA;
+    color: #D01834;
+    background: #FAFAFA;
+  }
+}
+.dv-button-danger.dv-button-link {
+  border: 1px solid #ffffff;
+  color: #D01834;
+  background: #ffffff;
+}
+
+// 按钮禁用污染
+.dv-button:disabled {
+  cursor: not-allowed;
+}
+.dv-button-primary:disabled,
+.dv-button-default:disabled,
+.dv-button-danger:disabled {
+  background: #F5F5F5;
+  color: #BFBFBF;
+  border: 1px solid #D9D9D9;
+  &:hover {
+    background: #F5F5F5;
+  color: #BFBFBF;
+  border: 1px solid #D9D9D9;
+  }
+}
+.dv-button-dashed:disabled {
+  background: #F5F5F5;
+  color: #BFBFBF;
+  border: 1px dashed #D9D9D9;
+  &:hover {
+    background: #F5F5F5;
+    color: #BFBFBF;
+    border: 1px dashed #D9D9D9;
+  }
+}
+.dv-button-text:disabled,
+.dv-button-link:disabled {
+  color: #595959;
+}
+.dv-button-text.dv-button-danger:disabled,
+.dv-button-link.dv-button-danger:disabled {
+  color: #BFBFBF;
+  background: transparent;
+  border-color: transparent;
 }
