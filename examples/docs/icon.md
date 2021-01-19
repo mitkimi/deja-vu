@@ -1,9 +1,54 @@
 # Icon 图标
+提供了一些有可能会用到的图标集合
 
-将会绘制以下图标
+## 使用方法
+通过 type 将图标引入
+
+:::demo
+```html
+<Icon class="icon-demo" type="dashboard-filled"></Icon>
+<Icon class="icon-demo" type="battery"></Icon>
+<Icon class="icon-demo" type="camera-fill"></Icon>
+
+<style>
+.icon-demo {
+  font-size: 30px;
+  margin-right: 40px;
+}
+</style>
+```
+:::
+
+
 
 ## 图标集合
+:::demo
+```html
+<div class="icon-demo-container">
+  <div class="icon-demo-box" v-for="(item,index) in list" :key="index">
+    <Icon class="icon-demo-item" :type="item"></Icon>
+    <div class="name">{{ item }}</div>
+  </div>
+</div>
+<script>
+const icons = require('../../packages/Icon/component/dictionary.json')
+export default {
+  data () {
+    return {
+      list: []
+    }
+  },
+  mounted () {
+    for (const key in icons) {
+      this.list.push(key)
+    }
+  }
+}
+</script>
+```
+:::
 
+未绘制完成的图标
 #### 常用
 - 用户
 - 星星

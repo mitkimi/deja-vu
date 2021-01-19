@@ -7,6 +7,7 @@ import Globe from './Globe'
 import DSwitch from './Switch'
 import DImage from './Image'
 import Avatar from './Avatar'
+import Icon from './Icon'
 
 const components = [
   Button,
@@ -17,7 +18,8 @@ const components = [
   Globe,
   DSwitch,
   DImage, // 看看这个怎么办
-  Avatar
+  Avatar,
+  Icon
 ]
 const install = function (Vue) {
   if (install.installed) return

@@ -103,3 +103,37 @@
     color: #ffffff;
   }
 }
+
+// icon
+.icon-demo {
+  font-size: 30px;
+  margin-right: 40px;
+}
+.icon-demo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .icon-demo-box {
+    width: calc((100% - 40px)/3 - 40px);
+    border-radius: 4px;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, .14);
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    transition: all, 300ms;
+    &:hover {
+      color: #0066cc;
+    }
+    .icon-demo-item {
+      font-size: 22px;
+    }
+    .name {
+      font-size: 18px;
+    }
+  }
+}

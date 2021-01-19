@@ -19,7 +19,7 @@ yarn @mitkimi/deja-vu
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/@mitkimi/deja-vu.css">
+<link rel="stylesheet" href="https://unpkg.com/@mitkimi/deja-vu/lib/@mitkimi/deja-vu.css">
 <!-- 引入组件库 -->
 <script src="https://unpkg.com/@mitkimi/deja-vu/lib/deja-vu.common.js"></script>
 ```
