@@ -1,7 +1,13 @@
 # Switch 开关
 开关表示两种完全对立状态之间的切换
 
-## 基本用法
+## 何时使用
+需要表示开关状态/两种状态之间的切换时
+
+和 `checkbox` 的区别时切换 `switch` 会直接触法状态的改变，而 `checkbox` 一般用于状态标记，需要和提交操作配合
+
+## 代码演示
+### 基本用法
 
 :::demo
 ```html
@@ -19,7 +25,7 @@ export default {
 ```
 :::
 
-## 设置状态颜色
+### 设置状态颜色
 
 :::demo
 ```html
@@ -44,7 +50,7 @@ export default {
 ```
 :::
 
-## 禁用状态
+### 禁用状态
 :::demo
 ```html
 <DSwitch v-model="value" disabled></DSwitch>
